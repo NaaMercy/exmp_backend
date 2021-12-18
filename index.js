@@ -21,10 +21,10 @@ app.use(express.json());
 app.use(cors());
 
 //assigning port number to server
-const port = 4000;
+const PORT = 4000;
 
 //assigning our database url to a variable
-const db = process.env.DB_URL;
+const db = process.env.PORT || process.env.DB_URL;
 
 
 app.get('/', (req, res) => {
@@ -85,4 +85,4 @@ mongoose.connect(db,{
 
 
 //listening to port of server
-app.listen(port, ()=>{console.log('Server is up and running')});
+app.listen(PORT, ()=>{console.log('Server is up and running')});
