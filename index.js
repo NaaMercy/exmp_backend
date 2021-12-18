@@ -21,10 +21,10 @@ app.use(express.json());
 app.use(cors());
 
 //assigning port number to server
-const PORT = 4000;
+const PORT = process.env.PORT || 4000;
 
 //assigning our database url to a variable
-const db = process.env.PORT || process.env.DB_URL;
+const db = process.env.DB_URL;
 
 
 app.get('/', (req, res) => {
